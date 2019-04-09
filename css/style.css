@@ -8,9 +8,11 @@
     --light-color:      #dc9bbc;
     --light-color-alt:  #ffed00;
     --bg-color:         #fff;
+
     --fs-title:          32px;
     --fs-subtitle:       24px;
     --fs-text:           16px;
+
     --ff-title:          'Euphoria Script', cursive;
     --ff-text:           'Roboto', sans-serif;
 
@@ -112,19 +114,18 @@ header{
     .important-container,
     .important-container img{
         height: 70vh;
+        border-right: 10px solid var(--dark-color);
     }
     .important-container{
         display: flex;
         flex-wrap: nowrap;
         overflow: hidden;
-        animation: moving 9s infinite alternate ease-in;
+        animation: moving 6s infinite alternate ease-in;
     }
     @keyframes moving{
-        0%, 32%{ margin-left: 0; }
-
-        33%, 66%{ margin-left: -50%; }
+        0%, 49%{ margin-left: 0; }
                 
-        67%, 100%{ margin-left: -100%; }
+        50%, 100%{ margin-left: -70%; }
     }
 
 main{
@@ -140,7 +141,8 @@ main{
         margin-bottom: 20px;
     }
     .category-item{
-        height: 50vh;
+        height: inherit;
+        width: inherit;
         overflow: hidden;
     }
     .category-item:hover{
@@ -148,12 +150,32 @@ main{
         box-shadow: 0 0 10px var(--dark-color);
     }
     .category-item img{
-        /* display: block; */
         /* margin: auto; */
-        /* height: 100%; */
-        object-fit: contain;
+        height: inherit;
+        width: inherit;
+        object-fit: cover;
     }
 
 footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vh;
     background-color: var(--second-color-alt);
 }
+    .contact,
+    .contact a,
+    .social,
+    .social a,
+    .designed,
+    .designed a{
+        font-family: var(--ff-title);
+        font-size: var(--fs-subtitle);
+        color: var(--light-color-alt);
+    }
+    .contact img,
+    .social img{
+        height: 30px;
+        vertical-align: -10px;
+        margin-right: 10px;
+    }
