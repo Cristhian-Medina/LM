@@ -1,0 +1,5 @@
+include config
+
+ul.menu__list
+  each link in menu
+    li.menu__item: a(href=`${link.split(' ').join('-')}.html`)= link

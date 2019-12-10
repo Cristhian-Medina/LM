@@ -1,0 +1,29 @@
+block config
+  include config
+
+include mixins
+
+doctype
+html
+  head
+    title= `${pageName} - ${webName}`
+    meta(name='description', content=`${metaDescription}`)
+    meta(charset='UTF-8')
+    link(rel='shorcut icon', href='img/icon.svg', type='image/x-icon')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    block style
+      link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Euphoria+Script|Roboto:400,700')
+      link(href="css/style.css" rel="stylesheet")
+  body
+    // ---NAVIGATION---
+    nav.nav
+      block nav
+    // ---HEADER---
+    header.header
+      block header
+    // ---CONTENT---
+    main.main
+      block content
+    // ---FOOTER--- 
+    footer.footer
+      block footer

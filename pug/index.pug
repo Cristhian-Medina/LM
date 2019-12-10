@@ -1,0 +1,31 @@
+extends include/template
+
+block nav
+  .logo__container
+    a(href='index.html'): img(src='img/dibujo.svg', alt='logo lizzie store')
+  menu.menu__container
+    include includes/menu
+  .user__container
+    +icon_boton('#', 'Search.svg', 'buscar')
+    +icon_boton('#', 'Buy.svg', 'carrito de compras')
+    +icon_boton('#', 'User.svg', 'usuario')
+block header
+  figure.header__container
+    each img in oferta
+      img(src=img, alt='oferta')
+block main
+  .main__container
+    each category in categories
+      +category_link(category.url, category.image, category.alt, category.name)
+block footer
+  .footer__top
+    .contac
+      +icon_link('https://api.whatsapp.com/send?text=Te%20recomiendo%20esta%20tienda%20de%20ropa%20online,%20Me%20encanta%20la%20nueva%20colección%20y%20los%20precios.%20https://cristhian-medina.github.io/LM/', 'whatsapp.svg', 'whatsapp', ' +57 320 252 0057')
+    .social
+      +icon_link('https://www.instagram.com/boutiquelizziemarie/', 'instagram.svg', 'instaram', ' @LM_boutique')
+    .faq
+      a(href='faq.html') Preguntas frecuentes
+  .footer__bottom
+    .designed
+      p Designed with &#128147; by
+        a(href='https://cristhian-medina.github.io/portfolio-sample/', target='_blank') Cris Medina

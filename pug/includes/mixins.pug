@@ -1,0 +1,24 @@
+mixin boton(url,text)
+  a(class='btn', href=url)= text
+
+mixin icon_boton(url,image,alt)
+  a(class='icon-btn', href=url)
+    img(src=`img/${image}`, alt=alt, height='50')
+
+mixin card(image,title,description,alt)
+  article.card
+    .card__image
+      img(src=`img/${image}`, alt=alt)
+    h2.card__title= title
+    p.card__body= description
+
+mixin icon_link(url,image,alt,text)
+  a(class='icon', href=url, target='_blank')
+    img(src=`img/${image}`, alt=alt, height='50')
+    p= text
+
+mixin category_link(url,image,alt,text)
+  article.category__container
+    figure.category__image
+      img(src=`img/${image}`, alt=alt)
+    a(class='category__link', href=url)= text
